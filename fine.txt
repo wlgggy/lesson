@@ -1,0 +1,6 @@
+4월 22, 2024 10:02:23 오전 logger.MyLogger log
+INFO: log Test
+4월 22, 2024 10:02:23 오전 logger.MyLogger log
+WARNING: log Test
+4월 22, 2024 10:02:23 오전 logger.MyLogger log
+SEVERE: log Test

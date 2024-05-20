@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="test">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipse/jee-2023-06/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
+    <path id="test.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.AddTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.ArrayListStream.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.ArrayStreamTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.DateTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.JoinTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.LibarayTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.ListToSet.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.Localetest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.MapTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.PriorityTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.RandomTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.StudentTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.SyncTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.test.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.ThreadTest2.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.THtest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.TimezoneTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.ThreeDPrinterTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.LoggerTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <path id="run.SystemTest.classpath">
+        <path refid="test.classpath"/>
+        <pathelement location="src/JavaAPI/ojdbc6.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="test.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AddTest">
+        <java classname="Lamda.AddTest" failonerror="true" fork="yes">
+            <classpath refid="run.AddTest.classpath"/>
+        </java>
+    </target>
+    <target name="ArrayListStream">
+        <java classname="stream.ArrayListStream" failonerror="true" fork="yes">
+            <classpath refid="run.ArrayListStream.classpath"/>
+        </java>
+    </target>
+    <target name="ArrayStreamTest">
+        <java classname="stream.ArrayStreamTest" failonerror="true" fork="yes">
+            <classpath refid="run.ArrayStreamTest.classpath"/>
+        </java>
+    </target>
+    <target name="DateTest">
+        <java classname="JavaAPI.DateTest" failonerror="true" fork="yes">
+            <classpath refid="run.DateTest.classpath"/>
+        </java>
+    </target>
+    <target name="JoinTest">
+        <java classname="thread.JoinTest" failonerror="true" fork="yes">
+            <classpath refid="run.JoinTest.classpath"/>
+        </java>
+    </target>
+    <target name="LibarayTest">
+        <java classname="thread.LibarayTest" failonerror="true" fork="yes">
+            <classpath refid="run.LibarayTest.classpath"/>
+        </java>
+    </target>
+    <target name="ListToSet">
+        <java classname="Collection.ListToSet" failonerror="true" fork="yes">
+            <classpath refid="run.ListToSet.classpath"/>
+        </java>
+    </target>
+    <target name="Localetest">
+        <java classname="JavaAPI.Localetest" failonerror="true" fork="yes">
+            <classpath refid="run.Localetest.classpath"/>
+        </java>
+    </target>
+    <target name="MapTest">
+        <java classname="Collection.MapTest" failonerror="true" fork="yes">
+            <classpath refid="run.MapTest.classpath"/>
+        </java>
+    </target>
+    <target name="PriorityTest">
+        <java classname="thread.PriorityTest" failonerror="true" fork="yes">
+            <classpath refid="run.PriorityTest.classpath"/>
+        </java>
+    </target>
+    <target name="RandomTest">
+        <java classname="JavaAPI.RandomTest" failonerror="true" fork="yes">
+            <classpath refid="run.RandomTest.classpath"/>
+        </java>
+    </target>
+    <target name="StudentTest">
+        <java classname="stream.StudentTest" failonerror="true" fork="yes">
+            <classpath refid="run.StudentTest.classpath"/>
+        </java>
+    </target>
+    <target name="SyncTest">
+        <java classname="thread.SyncTest" failonerror="true" fork="yes">
+            <classpath refid="run.SyncTest.classpath"/>
+        </java>
+    </target>
+    <target name="test">
+        <java classname="JavaAPI.test" failonerror="true" fork="yes">
+            <classpath refid="run.test.classpath"/>
+        </java>
+    </target>
+    <target name="ThreadTest2">
+        <java classname="thread.ThreadTest2" failonerror="true" fork="yes">
+            <classpath refid="run.ThreadTest2.classpath"/>
+        </java>
+    </target>
+    <target name="THtest">
+        <java classname="thread.THtest" failonerror="true" fork="yes">
+            <classpath refid="run.THtest.classpath"/>
+        </java>
+    </target>
+    <target name="TimezoneTest">
+        <java classname="JavaAPI.TimezoneTest" failonerror="true" fork="yes">
+            <classpath refid="run.TimezoneTest.classpath"/>
+        </java>
+    </target>
+    <target name="ThreeDPrinterTest">
+        <java classname="Generic.ThreeDPrinterTest" failonerror="true" fork="yes">
+            <classpath refid="run.ThreeDPrinterTest.classpath"/>
+        </java>
+    </target>
+    <target name="LoggerTest">
+        <java classname="logger.LoggerTest" failonerror="true" fork="yes">
+            <classpath refid="run.LoggerTest.classpath"/>
+        </java>
+    </target>
+    <target name="SystemTest">
+        <java classname="IOStream.SystemTest" failonerror="true" fork="yes">
+            <classpath refid="run.SystemTest.classpath"/>
+        </java>
+    </target>
+</project>
